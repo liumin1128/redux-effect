@@ -1,0 +1,26 @@
+{
+  "name": "redux-effect",
+  "version": "0.3.0",
+  "description": "Elegant redux state manager",
+  "main": "index.js",
+  "scripts": {
+    "publish": "sh ./publish.sh",
+    "dev": "rollup -c --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liumin1128/redux-effect.git"
+  },
+  "keywords": [
+    "redux",
+    "effect",
+    "store"
+  ],
+  "author": "liumin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liumin1128/redux-effect/issues"
+  },
+  "homepage": "https://github.com/liumin1128/redux-effect#readme"
+}
