@@ -1,10 +1,9 @@
 {
   "name": "redux-effect",
-  "version": "0.3.0",
+  "version": "0.5.3",
   "description": "Elegant redux state manager",
   "main": "index.js",
   "scripts": {
-    "publish": "sh ./publish.sh",
     "dev": "rollup -c --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
