@@ -13,6 +13,8 @@ export const reduxReduers = (models) => {
     return reducers;
 };
 
+
+
 // 格式化effects，输入任意数量models，返回effects中间件
 export const reduxEffects = models => store => next => async (action) => {
     next(action);

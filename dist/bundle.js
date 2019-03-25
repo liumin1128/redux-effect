@@ -11,7 +11,7 @@ const reduxReduers = (models) => {
             if (key && type && key === model.namespace && typeof model.reducers[type] === 'function') {
                 return model.reducers[type](state, action);
             }
-            return state || model.initState || {};
+            return state || model.state || {};
         };
     });
     return reducers;
