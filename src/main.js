@@ -7,12 +7,11 @@ export const reduxReduers = (models) => {
             if (key && type && key === model.namespace && typeof model.reducers[type] === 'function') {
                 return model.reducers[type](state, action);
             }
-            return state || model.initState || {};
+            return state || model.state || {};
         };
     });
     return reducers;
 };
-
 
 // 格式化effects，输入任意数量models，返回effects中间件
 export const reduxEffects = models => store => next => async (action) => {
