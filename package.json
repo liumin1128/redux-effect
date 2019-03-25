@@ -2,7 +2,7 @@
   "name": "redux-effect",
   "version": "0.5.4",
   "description": "Elegant redux state manager",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "dev": "rollup -c --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
