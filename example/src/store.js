@@ -31,8 +31,8 @@ const counter = {
     number: 0
    },
   reducers: {
-    add: (state, { payload }) => ({ ...state, number: state.number + 1 }),
-    reduce: (state, { payload }) => ({ ...state, number: state.number - 1 }),
+    add: (state) => ({ ...state, number: state.number + 1 }),
+    reduce: (state) => ({ ...state, number: state.number - 1 }),
     save: (state, { payload }) => ({ ...state, ...payload }),
   },
 };
