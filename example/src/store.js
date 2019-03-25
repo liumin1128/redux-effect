@@ -3,24 +3,46 @@ import { reduxReduers, reduxEffects } from 'redux-effect';
 
 export const sleep = (timer = 1000) => new Promise(resolve => setTimeout(resolve, timer));
 
-const test = {
-  namespace: 'test',
-  state: { text: 'hi!' },
+const text = {
+  namespace: 'text',
+  state: {
+    text: 'hi，redux-effect！',
+    number: 0
+   },
   reducers: {
+    add: (state, { payload }) => ({ ...state, number: state.number + 1 }),
+    reduce: (state, { payload }) => ({ ...state, number: state.number - 1 }),
     save: (state, { payload }) => ({ ...state, ...payload }),
     clear: () => ({}),
   },
   effects: {
     fetch: async ({ getState, dispatch }, { payload }) => {
+      await dispatch({ type: 'text/save', payload: { text: '你点击了按钮，三秒后更新。请查看控制台，redux DevTools' } });
       await sleep(3000);
-      await dispatch({ type: 'test/clear' });
+      await dispatch({ type: 'text/save', payload: { text: '更新了，再过三秒清空，最终恢复' } });
       await sleep(3000);
-      await dispatch({ type: 'test/save', payload: { text: 'hello world' } });
+      await dispatch({ type: 'text/clear' });
+      await sleep(3000);
+      await dispatch({ type: 'text/save', payload: { text: 'hi，redux-effect！' } });
     },
   },
 };
 
-const models = [ test ];
+const counter = {
+  namespace: 'counter',
+  state: {
+    counter: 'hi，redux-effect！',
+    number: 0
+   },
+  reducers: {
+    add: (state, { payload }) => ({ ...state, number: state.number + 1 }),
+    reduce: (state, { payload }) => ({ ...state, number: state.number - 1 }),
+    save: (state, { payload }) => ({ ...state, ...payload }),
+    clear: () => ({}),
+  },
+};
+
+const models = [ text, counter ];
 
 const reducers = combineReducers(reduxReduers(models));
 const middlewares = [ reduxEffects(models) ];

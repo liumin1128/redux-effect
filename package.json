@@ -1,6 +1,6 @@
 {
   "name": "redux-effect",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Elegant redux state manager",
   "main": "dist/bundle.js",
   "scripts": {
