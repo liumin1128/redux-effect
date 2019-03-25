@@ -40,7 +40,7 @@ const store = createStore(
 ```Javascript
 export default {
   namespace: 'test',
-  initState: { text: 'hi!' },
+  state: { text: 'hi!' },
   reducers: {
     save: (state, { payload }) => ({ ...state, ...payload }),
     clear: () => ({})
@@ -61,7 +61,7 @@ export default {
 
 model的命名空间，对应state的名字，必填，只接受一个字符串。
 
-**initState：**
+**state：**
 
 state的初始值，非必填，默认为空对象
 
@@ -135,7 +135,7 @@ reducer其实就是redux中的reducer，用法完全一样。比如定义一个p
 ```
 export default {
   namespace: 'test',
-  initState: { data: [] },
+  state: { data: [] },
   reducers: {
     save: (state, { payload }) => ({ ...state, ...payload }),
     clear: () => ({}),
