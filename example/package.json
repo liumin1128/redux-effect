@@ -9,7 +9,7 @@
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-effect": "^0.5.5"
+    "redux-effect": "^0.5.6"
   },
   "scripts": {
     "start": "react-scripts start",

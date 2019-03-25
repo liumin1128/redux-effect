@@ -1,4 +1,4 @@
-基于redux、async/await，兼容其他插件的异步状态管理方案。
+基于redux、async/await，无侵入兼容性良好的异步状态管理器。
 
 ## install
 
@@ -30,8 +30,9 @@ const store = createStore(
 
 从代码可以看出，从reduxReduers, reduxEffects中得到的就是标准的reducer和middleware，完美兼容其他redux插件，也可以轻松整合进老项目中。
 
+完整例子：[example](example/src/store.js)
 
-## 声明 model
+## model
 
 在redux-effect中，没有action的概念，也不需要定义action type。
 
@@ -81,11 +82,11 @@ state的初始值，非必填，默认为空对象
 2. type的组织形式：namespace + '/' + reducer或effect方法名
 3. 参数的传递：需要合并的参数用payload包裹
 
-定义每一个action，并将其绑定到视图层过于繁琐，去action化则让事件的触发变的很灵活。
+定义每一个action，并将其绑定到视图层过于繁琐，去action化则让事件的触发变的灵活。
 
 **普通事件**
 
-发送事件时，不区分同步还是异步，只管dispatch，一切都已在model中定义好了。
+发送事件时，不区分同步还是异步，只管dispatch，一切都已在model中定义好。
 
 ```javascript
 // 同步
@@ -151,8 +152,10 @@ export default {
 
 effect其实就是一个普通async函数，接受store和action两个参数，可以使用async/await，可以执行任意异步方法，可以随时拿到state的值，可以dispatch触发另一个effect或者reducer。
 
-## 关于redux-model-creator
+## 关于model-creator
 
 以上所做的事情，是将redux核心规范为model，得到了统一且可以复用的数据模型，这为自动生成model创造了可能性，如果能通过工厂模式，自动化创建具有类似功能，且可以随意装配的model，一切将变得更加美好。
 
-了解更多请移步：[redux-model-creator](https://github.com/liumin1128/redux-model-creator)
+Coming Soon
+
+<!-- 了解更多请移步：[redux-model-creator](https://github.com/liumin1128/redux-model-creator) -->
