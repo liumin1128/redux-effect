@@ -7,11 +7,8 @@ const text = {
   namespace: 'text',
   state: {
     text: 'hi，redux-effect！',
-    number: 0
    },
   reducers: {
-    add: (state, { payload }) => ({ ...state, number: state.number + 1 }),
-    reduce: (state, { payload }) => ({ ...state, number: state.number - 1 }),
     save: (state, { payload }) => ({ ...state, ...payload }),
     clear: () => ({}),
   },
@@ -31,14 +28,12 @@ const text = {
 const counter = {
   namespace: 'counter',
   state: {
-    counter: 'hi，redux-effect！',
     number: 0
    },
   reducers: {
     add: (state, { payload }) => ({ ...state, number: state.number + 1 }),
     reduce: (state, { payload }) => ({ ...state, number: state.number - 1 }),
     save: (state, { payload }) => ({ ...state, ...payload }),
-    clear: () => ({}),
   },
 };
 
